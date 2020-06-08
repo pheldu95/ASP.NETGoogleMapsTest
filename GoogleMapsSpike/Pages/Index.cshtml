@@ -4,7 +4,28 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-md-6">
+        Google Map
+    </div>
+    <div class="col-md-6">
+        <div id="map" style="height:400px; width: 400px;">
+            <script>
+                function initMap() {
+                    // The location of Uluru
+                    var uluru = { lat: -25.344, lng: 131.036 };
+                    // The map, centered at Uluru
+                    var map = new google.maps.Map(
+                        document.getElementById('map'), { zoom: 4, center: uluru });
+                    // The marker, positioned at Uluru
+                    var marker = new google.maps.Marker({ position: uluru, map: map });
+                }
+                
+            </script>
+            <script async defer
+                src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyANcpTAkOgroQ2nan5riLPhWojzof2Vt0k&callback=initMap">
+            </script>
+        </div>
+
+    </div>
 </div>
